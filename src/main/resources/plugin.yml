@@ -4,4 +4,4 @@ main: me.truedarklord.reduceDrops.ReduceDrops
 api-version: '1.21'
 prefix: Reduce Drops
 authors: [ TrueDarkLord ]
-description: Automatically pickup items instead of them droping onto the ground.
+description: Automatically pickup items instead of them dropping onto the ground.
