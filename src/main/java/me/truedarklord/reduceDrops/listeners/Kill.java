@@ -30,7 +30,7 @@ public class Kill implements Listener {
         if (killer == null) return;
 
         List<ItemStack> items = event.getDrops();
-        List<ItemStack> toRemove = new ArrayList<>();
+        List<ItemStack> toRemove = new ArrayList<>(items.size());
 
         for (ItemStack itemStack : items) {
             if (!canGive(itemStack.getType().toString())) continue;
@@ -49,7 +49,7 @@ public class Kill implements Listener {
     }
 
     private boolean canGive(String itemType) {
-        return useWhitelist == (watchlist.contains(itemType.toLowerCase()));
+        return useWhitelist == (watchlist.contains(itemType));
     }
 
     public static void reload() {

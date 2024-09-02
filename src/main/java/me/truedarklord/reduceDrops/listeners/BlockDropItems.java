@@ -31,7 +31,7 @@ public class BlockDropItems implements Listener {
         Player player = event.getPlayer();
 
         List<Item> items = event.getItems();
-        List<Item> toRemove = new ArrayList<>();
+        List<Item> toRemove = new ArrayList<>(items.size());
 
         for (Item item : items) {
             ItemStack itemStack = item.getItemStack();
@@ -59,7 +59,7 @@ public class BlockDropItems implements Listener {
     }
 
     private boolean canGive(String itemType) {
-        return useWhitelist == (watchlist.contains(itemType.toLowerCase()));
+        return useWhitelist == (watchlist.contains(itemType));
     }
 
     public static void reload() {
