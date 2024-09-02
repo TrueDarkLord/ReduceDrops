@@ -49,7 +49,7 @@ public class Kill implements Listener {
     }
 
     private boolean canGive(String itemType) {
-        return useWhitelist == (watchlist.contains(itemType));
+        return useWhitelist == (!watchlist.isEmpty() && watchlist.contains(itemType));
     }
 
     public static void reload() {
