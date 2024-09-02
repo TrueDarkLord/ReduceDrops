@@ -1,6 +1,8 @@
 package me.truedarklord.reduceDrops.commands;
 
 import me.truedarklord.reduceDrops.ReduceDrops;
+import me.truedarklord.reduceDrops.listeners.BlockDropItems;
+import me.truedarklord.reduceDrops.listeners.Kill;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +23,11 @@ public class Reload implements CommandExecutor {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
 
-        sender.sendMessage("&7[&2&lReduced Drops&7] Has been reloaded.");
+        // Reload plugin specific data.
+        BlockDropItems.reload();
+        Kill.reload();
+
+        sender.sendMessage("[Reduced Drops] Has been reloaded.");
         return true;
     }
 }
