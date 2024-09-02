@@ -12,6 +12,8 @@ import org.bukkit.event.block.BlockDropItemEvent;
 
 public class BlockDropItems implements Listener {
 
+    private static final ReduceDrops plugin = ReduceDrops.getPlugin(ReduceDrops.class);
+
     public BlockDropItems(ReduceDrops plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
@@ -29,6 +31,8 @@ public class BlockDropItems implements Listener {
     // Give xp from block break.
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent event) {
+        if (!(plugin.getConfig().getBoolean("BlockBreak.Handle-XP", true))) return;
+
         Player player = event.getPlayer();
 
         Utils.giveXp(player, event.getExpToDrop());

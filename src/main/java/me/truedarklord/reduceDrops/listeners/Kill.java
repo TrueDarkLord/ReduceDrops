@@ -11,6 +11,8 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 public class Kill implements Listener {
 
+    private static final ReduceDrops plugin = ReduceDrops.getPlugin(ReduceDrops.class);
+
     public Kill(ReduceDrops plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
@@ -24,8 +26,10 @@ public class Kill implements Listener {
         event.getDrops().forEach(drop -> Utils.giveOrDropItems(killer, drop));
         event.getDrops().clear();
 
-        Utils.giveXp(killer, event.getDroppedExp());
-        event.setDroppedExp(0);
+        if (!(plugin.getConfig().getBoolean("Kill.Handle-XP", true))) {
+            Utils.giveXp(killer, event.getDroppedExp());
+            event.setDroppedExp(0);
+        }
 
     }
 
