@@ -3,10 +3,9 @@ package me.truedarklord.reduceDrops;
 import me.truedarklord.reduceDrops.commands.Reload;
 import me.truedarklord.reduceDrops.listeners.BlockDropItems;
 import me.truedarklord.reduceDrops.listeners.Kill;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.awt.*;
+
 
 public final class ReduceDrops extends JavaPlugin {
 
