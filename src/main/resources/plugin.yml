@@ -5,3 +5,8 @@ api-version: '1.21'
 prefix: Reduce Drops
 authors: [ TrueDarkLord ]
 description: Automatically pickup items instead of them dropping onto the ground.
+commands:
+  reload:
+    usage: /<command>
+    permission: reduceddrops.reload
+    description: Reloads the plugin.

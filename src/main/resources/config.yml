@@ -1,0 +1,15 @@
+# Settings for block break.
+BlockBreak:
+  Handle-XP: true
+  Whitelist: false # if True, use a whitelist, otherwise use a blacklist for the items specified below.
+  Items: []
+# All item types specified need to be capitalized. Format:
+ # Items:
+ #  - BEDROCK
+ #  - DIRT
+
+# Settings for killing.
+Kill:
+  Handle-XP: true
+  Whitelist: false
+  Items: []
