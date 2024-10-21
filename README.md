@@ -8,7 +8,7 @@ Reduced Drops is a plugin that aims to reduce the clutter and quantity of entiti
   Currently, there are no config options for the plugin, but we can add them later if there is interest in the project.
 
 # Setup:
-- Download the jar file.
+- [Download](https://modrinth.com/plugin/reduced-drops) the jar file.
 - Place the file into your server's plugin folder.
 - Start the server and Enjoy!
 
@@ -18,4 +18,3 @@ This plugin was designed with simplicity in mind to reduce the chances of it bre
 
 ## Feel free to open an [issue](https://github.com/TrueDarkLord/ReduceDrops/issues) if there are problems. 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O0OI3A2)
-
