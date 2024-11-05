@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'me.truedarklord'
-version = '1.21.1-V3'
+version = '1.21-4'
 
 repositories {
     mavenCentral()
