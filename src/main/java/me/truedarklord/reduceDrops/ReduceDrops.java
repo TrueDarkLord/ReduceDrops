@@ -3,6 +3,7 @@ package me.truedarklord.reduceDrops;
 import me.truedarklord.reduceDrops.commands.Reload;
 import me.truedarklord.reduceDrops.listeners.BlockDropItems;
 import me.truedarklord.reduceDrops.listeners.Kill;
+import me.truedarklord.reduceDrops.listeners.Shear;
 import me.truedarklord.reduceDrops.metrics.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +21,7 @@ public final class ReduceDrops extends JavaPlugin {
 
         new BlockDropItems(this);
         new Kill(this);
+        new Shear();
     }
 
     private void advertise() {
