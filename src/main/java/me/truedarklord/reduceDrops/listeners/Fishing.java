@@ -4,7 +4,6 @@ import me.truedarklord.reduceDrops.ReduceDrops;
 import me.truedarklord.reduceDrops.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -22,7 +21,7 @@ public class Fishing implements Listener {
     public void onFish(PlayerFishEvent event) {
         if (plugin.getConfig().getBoolean("Fishing", false)) return;
 
-        Item drop = ((Item) event.getCaught());
+        if (!(event.getCaught() instanceof Item drop)) return;
 
         Utils.giveOrDropItems(event.getPlayer(), drop.getItemStack());
 
