@@ -19,7 +19,13 @@ public class Fishing implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onFish(PlayerFishEvent event) {
-        if (plugin.getConfig().getBoolean("Fishing", false)) return;
+        if (!plugin.getConfig().getBoolean("Fishing.Enabled", false)) return;
+
+        if (plugin.getConfig().getBoolean("Fishing.Handle-XP", false)) {
+            Utils.giveXp(event.getPlayer(), event.getExpToDrop());
+        }
+
+        event.setExpToDrop(0);
 
         if (!(event.getCaught() instanceof Item drop)) return;
 

@@ -25,7 +25,7 @@ public class Shear implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onShear(PlayerShearEntityEvent event) {
-        if (plugin.getConfig().getBoolean("Shear", false)) return;
+        if (!plugin.getConfig().getBoolean("Shearing.Enabled", false)) return;
 
         UUID entityId = event.getEntity().getUniqueId();
 

@@ -15,6 +15,10 @@ Kill:
   Items: []
 
 # Setting for shearing sheep.
-Shear: true
+Shearing:
+  Enabled: true
+
 #Setting for fishing.
-Fishing: true
+Fishing:
+  Enabled: true
+  Handle-XP: true
