@@ -13,3 +13,12 @@ Kill:
   Handle-XP: true
   Whitelist: false
   Items: []
+
+# Setting for shearing sheep.
+Shearing:
+  Enabled: true
+
+#Setting for fishing.
+Fishing:
+  Enabled: true
+  Handle-XP: true
