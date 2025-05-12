@@ -2,6 +2,7 @@ package me.truedarklord.reduceDrops;
 
 import me.truedarklord.reduceDrops.commands.Reload;
 import me.truedarklord.reduceDrops.listeners.BlockDropItems;
+import me.truedarklord.reduceDrops.listeners.Fishing;
 import me.truedarklord.reduceDrops.listeners.Kill;
 import me.truedarklord.reduceDrops.listeners.Shear;
 import me.truedarklord.reduceDrops.metrics.Metrics;
@@ -22,6 +23,7 @@ public final class ReduceDrops extends JavaPlugin {
         new BlockDropItems(this);
         new Kill(this);
         new Shear();
+        new Fishing();
     }
 
     private void advertise() {

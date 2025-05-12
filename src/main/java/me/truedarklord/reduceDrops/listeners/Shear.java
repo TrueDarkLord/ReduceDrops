@@ -16,12 +16,12 @@ import java.util.UUID;
 
 public class Shear implements Listener {
 
+    private final ReduceDrops plugin = ReduceDrops.getPlugin(ReduceDrops.class);
+    private final Map<UUID, UUID> shearMap = new HashMap<>();
+
     public Shear() {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
-
-    private final ReduceDrops plugin = ReduceDrops.getPlugin(ReduceDrops.class);
-    private final Map<UUID, UUID> shearMap = new HashMap<>();
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onShear(PlayerShearEntityEvent event) {
