@@ -23,7 +23,7 @@ public class Kill implements Listener {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
-    // Gives loot an xp to the player that killed the entity or other player.
+    // Gives loot and xp to the player that killed the entity or other player.
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onKill(EntityDeathEvent event) {
         Player killer = event.getEntity().getKiller();
