@@ -3,6 +3,7 @@ package me.truedarklord.reduceDrops.listeners;
 import me.truedarklord.reduceDrops.ReduceDrops;
 import me.truedarklord.reduceDrops.Utils;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,6 +19,7 @@ public class Kill implements Listener {
     private static final ReduceDrops plugin = ReduceDrops.getPlugin(ReduceDrops.class);
     private static List<String> watchlist = plugin.getConfig().getStringList("Kill.Items");
     private static Boolean useWhitelist = plugin.getConfig().getBoolean("Kill.Whitelist", false);
+    private static List<String> entityBlacklist = plugin.getConfig().getStringList("Kill.Entity-Blacklist");
 
     public Kill(ReduceDrops plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -26,8 +28,11 @@ public class Kill implements Listener {
     // Gives loot and xp to the player that killed the entity or other player.
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onKill(EntityDeathEvent event) {
-        Player killer = event.getEntity().getKiller();
+        LivingEntity killedEntity = event.getEntity();
+        Player killer = killedEntity.getKiller();
+
         if (killer == null) return;
+        if (entityBlacklist.contains(killedEntity.getType().toString())) return;
 
         List<ItemStack> items = event.getDrops();
         List<ItemStack> toRemove = new ArrayList<>(items.size());
@@ -55,6 +60,7 @@ public class Kill implements Listener {
     public static void reload() {
         watchlist = plugin.getConfig().getStringList("Kill.Items");
         useWhitelist = plugin.getConfig().getBoolean("Kill.Whitelist", false);
+        entityBlacklist = plugin.getConfig().getStringList("Kill.Entity-Blacklist");
     }
 
 }

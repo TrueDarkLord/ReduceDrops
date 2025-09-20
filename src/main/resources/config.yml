@@ -13,6 +13,7 @@ Kill:
   Handle-XP: true
   Whitelist: false
   Items: []
+  Entity-Blacklist: []
 
 # Setting for shearing sheep.
 Shearing:
