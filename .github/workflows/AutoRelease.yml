@@ -57,4 +57,4 @@ jobs:
             purpur
             folia
           game-versions: |
-            >=1.20
+            >=1.21
