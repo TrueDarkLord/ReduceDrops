@@ -40,21 +40,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-      - name: Publish to Modrinth
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          modrinth-id: 53bLuKoa
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          version-type: ${{ contains(github.ref, 'dev') && 'beta' || 'release' }}
-          files: "build/libs/*.jar"
-          changelog: ${{ github.event.head_commit.message }}
-          version-name: "Reduced Drops - ${{ github.ref }}"
-          version-number: "${{ github.ref }}"
-          featured: true
-          loaders: |
-            spigot
-            paper
-            purpur
-            folia
-          game-versions: |
-            >=1.21
+      # - name: Publish to Modrinth
+      #   uses: Kir-Antipov/mc-publish@v3.3
+      #   with:
+      #     modrinth-id: 53bLuKoa
+      #     modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+      #     version-type: ${{ contains(github.ref, 'dev') && 'beta' || 'release' }}
+      #     files: "build/libs/*.jar"
+      #     changelog: ${{ github.event.head_commit.message }}
+      #     version-name: "Reduced Drops - ${{ github.ref }}"
+      #     version-number: "${{ github.ref }}"
+      #     featured: true
+      #     loaders: |
+      #       spigot
+      #       paper
+      #       purpur
+      #       folia
+      #     game-versions: |
+      #       >=1.21
