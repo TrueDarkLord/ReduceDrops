@@ -5,7 +5,7 @@ import me.truedarklord.reduceDrops.listeners.BlockDropItems;
 import me.truedarklord.reduceDrops.listeners.Fishing;
 import me.truedarklord.reduceDrops.listeners.Kill;
 import me.truedarklord.reduceDrops.listeners.Shear;
-import me.truedarklord.reduceDrops.metrics.Metrics;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -14,7 +14,7 @@ public final class ReduceDrops extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Metrics metrics = new Metrics(this, 23822);
+        new Metrics(this, 23822);
 
         advertise();
 
